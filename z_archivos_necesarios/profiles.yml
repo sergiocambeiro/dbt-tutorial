@@ -1,0 +1,25 @@
+default:
+  outputs:
+
+    dev:
+      type: redshift
+      threads: 4
+      host: localhost
+      port: 80
+      user: sergio
+      pass: <password>
+      dbname: jaffle_shop
+      schema: dbt_sergio
+
+    prod:
+      type: redshift
+      method: iam
+      cluster_id: [cluster_id]
+      threads: 4
+      host: localhost
+      port: 80
+      user: [prod_user]
+      dbname: jaffle_shop
+      schema: dbt_sergio
+
+  target: dev
